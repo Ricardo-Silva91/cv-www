@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Build Qwik app
-        run: npm build
+        run: npm run build
 
       - name: Deploy Qwik app to GitHub Pages
         uses: actions/github-script@v6
