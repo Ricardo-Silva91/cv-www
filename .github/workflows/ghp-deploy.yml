@@ -18,10 +18,10 @@ jobs:
           node-version: '16'
 
       - name: Install Qwik dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build Qwik app
-        run: pnpm build
+        run: npm build
 
       - name: Deploy Qwik app to GitHub Pages
         uses: actions/github-script@v6
