@@ -1,9 +1,15 @@
 'use client';
 
 import { useMemo, useState } from 'react'
-import styles from './written-text.module.scss'
 
-export default function WrittenText({ lines }: { lines: { text: string, classes?: string}[] }) {
+export interface WrittenTextProps {
+  lines: {
+    text: string,
+    classes?: string
+  }[]
+}
+
+export default function WrittenText({ lines }: WrittenTextProps) {
   let [numberOfChars, setNumberOfChars] = useState(0);
   let [currentLine, setCurrentLine] = useState(0);
   let [tickTime, setTickTime] = useState(40);
@@ -25,7 +31,7 @@ export default function WrittenText({ lines }: { lines: { text: string, classes?
     }
     
     const fullWordToShowLength = fullWordToShow.length;
-    return Math.floor(Math.random() * (fullWordToShowLength / 2) + (fullWordToShowLength / 2));
+    return Math.floor(Math.random() * (fullWordToShowLength));
   }, [currentLine]);
   const fullWordToShowWrong = useMemo(() => {
     if (currentLine < lines.length - 1) {
@@ -97,9 +103,9 @@ export default function WrittenText({ lines }: { lines: { text: string, classes?
     <>
     {
       linesToShow.map((line, index) => 
-      <div key={index}><span >{ line.text }</span></div>)
+      line.text === '\n' ? <br key={index}/> : <span key={index} className={line.classes}>{ line.text }</span>)
     }
-    <span key={linesToShow.length}>{ textToShow }</span>
+    <span key={linesToShow.length} className={lines[currentLine].classes}>{ textToShow }</span>
     </>
   )
 }
