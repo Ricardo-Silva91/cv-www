@@ -80,7 +80,7 @@ export default function WrittenText({ lines }: WrittenTextProps) {
         break;
       
       case 'deleting':
-        if (numberOfChars > indexForError) {
+        if (numberOfChars > indexForError - 1) {
           setNumberOfChars(numberOfChars - 1);
         } else {
           setWriteState('right');
