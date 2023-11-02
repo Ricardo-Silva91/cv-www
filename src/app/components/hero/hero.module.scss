@@ -1,6 +1,7 @@
 .hero {
     width: 100%;
     height: calc($space-1x * 40);
+    height: 100vh;
     padding: $space-1x;
     background-color: $color-primary;
 }

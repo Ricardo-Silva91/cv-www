@@ -1,5 +1,9 @@
+'use client'
+
+import { SmoothScrollContext } from '@/app/utils/SmoothScroll.context';
 import WrittenText, { WrittenTextProps } from '../written-text/WrittenText'
 import styles from './hero.module.scss'
+import { useContext } from 'react';
 
 export default function Hero() {
   const writtenTextProps: WrittenTextProps = {
@@ -16,8 +20,20 @@ export default function Hero() {
   };
 
   return (
-    <div className={styles.hero}>
-      <WrittenText lines={writtenTextProps.lines}></WrittenText>
+    <div className={styles.hero} data-scroll-section>
+      <WrittenText lines={writtenTextProps.lines} ></WrittenText>
+      
+      <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
+          Locomotive Scroll in React
+        </h1>
+        <h2
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+        >
+          Ima go sideways
+        </h2>
     </div>
   )
 }

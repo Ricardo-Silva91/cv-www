@@ -62,8 +62,6 @@ export default function WrittenText({ lines }: WrittenTextProps) {
   }, [numberOfChars]);
 
   const runTick = () => {
-    console.log('here');
-    
     switch (writeState) {
       case 'right':
       case 'wrong':
