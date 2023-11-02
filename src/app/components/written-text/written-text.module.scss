@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    height: calc($space-1x * 4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-1x;
+    background-color: $primary-color;
+
+    &__left {
+        background-color: pink;
+    }
+
+    &__right {
+        background-color: yellow;
+    }
+}
