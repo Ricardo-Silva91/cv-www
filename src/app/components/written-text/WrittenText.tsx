@@ -3,12 +3,11 @@
 import { useMemo, useState } from 'react'
 import styles from './written-text.module.scss'
 
-const timeBetweenClicks  = 50;
-
 export default function WrittenText({ lines }: { lines: { text: string, classes?: string}[] }) {
   let [numberOfChars, setNumberOfChars] = useState(0);
   let [currentLine, setCurrentLine] = useState(0);
-  let [writeState, setWriteState] = useState<'wrong' | 'deleting' | 'right'>('wrong');
+  let [tickTime, setTickTime] = useState(40);
+  let [writeState, setWriteState] = useState<'wrong' | 'deleting' | 'right'>(lines.length === 1 ? 'wrong' : 'right');
 
   const linesToShow = useMemo(() => {
     if (!lines) {
@@ -26,7 +25,7 @@ export default function WrittenText({ lines }: { lines: { text: string, classes?
     }
     
     const fullWordToShowLength = fullWordToShow.length;
-    return Math.floor(Math.random() * fullWordToShowLength);
+    return Math.floor(Math.random() * (fullWordToShowLength / 2) + (fullWordToShowLength / 2));
   }, [currentLine]);
   const fullWordToShowWrong = useMemo(() => {
     if (currentLine < lines.length - 1) {
@@ -44,18 +43,55 @@ export default function WrittenText({ lines }: { lines: { text: string, classes?
       return '';
     }
 
-    return fullWordToShowWrong.slice(0, numberOfChars);
+    switch (writeState) {
+      case 'right':
+        return fullWordToShow.slice(0, numberOfChars);
+      case 'wrong':
+        return fullWordToShowWrong.slice(0, numberOfChars);
+      case 'deleting':
+        return fullWordToShowWrong.slice(0, numberOfChars);
+      default:
+        break;
+    }
   }, [numberOfChars]);
+
+  const runTick = () => {
+    console.log('here');
+    
+    switch (writeState) {
+      case 'right':
+      case 'wrong':
+        if (numberOfChars < fullWordToShow.length) {
+          setNumberOfChars(numberOfChars + 1);
+        } else if (writeState === 'wrong') {
+          setWriteState('deleting');
+          setTickTime(25);
+        } else if (writeState === 'right' && currentLine < lines.length - 1) {
+          if (currentLine === lines.length - 2) {
+            setWriteState('wrong');
+          }
+          setCurrentLine(currentLine + 1);
+          setNumberOfChars(0);
+        }
+        break;
+      
+      case 'deleting':
+        if (numberOfChars > indexForError) {
+          setNumberOfChars(numberOfChars - 1);
+        } else {
+          setWriteState('right');
+        }
+        break;
+    
+      default:
+        break;
+    }
+  };
+  
   
   setTimeout(() => {
-    if (numberOfChars < lines[currentLine].text.length) {
-      setNumberOfChars(numberOfChars + 1);
-    } else if (currentLine < lines.length - 1) {
-      setNumberOfChars(0);
-      setCurrentLine(currentLine + 1);
-    }
-  }, timeBetweenClicks);
-  
+    runTick();
+  }, tickTime);
 
   return (
     <>

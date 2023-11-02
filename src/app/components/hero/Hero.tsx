@@ -3,7 +3,7 @@ import styles from './hero.module.scss'
 
 export default function Hero() {
   const writtenLines = [
-    { text: 'Hello, my name is Ricardo Silva' },
+    { text: 'Hello, my name is Ricardo Silva,' },
     { text: 'I\'m a software engineer focused on front-end development.' },
   ]
 

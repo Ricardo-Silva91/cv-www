@@ -3,7 +3,7 @@ name: Deploy Qwik App On Github Pages
 on:
   push:
     branches:
-      - main
+      - maino
 
 jobs:
   web-deploy:
