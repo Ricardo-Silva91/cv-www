@@ -14,10 +14,9 @@ export default function Home() {
   return (
     <>
       <SmoothScrollProvider options={{ smooth: true }}>
-    <Environment></Environment>
-    <Header></Header>
-    
-        <main data-scroll-container data-scroll-section>
+        <Header></Header>
+        <main data-scroll-container data-scroll-section id='main'>
+          <Environment></Environment>
           <div>
               <Hero></Hero>
               <About></About>

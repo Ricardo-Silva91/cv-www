@@ -3,44 +3,74 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: $z-index-sky;
 
-    --distance-from-center: 50%;
+    --distance-from-center: 30%;
 
-    &__clouds {
-        &::before,
-        &::after {
-            content: '';
-            position:absolute;
-            width:100%;
-            height:100%;
-            display:block;
+    &__cloud {
+        
+        content: '';
+        position:absolute;
+        // width:100%;
+        height:100%;
+        display:block;
 
-            // background:transparent url(/img/clouds.png) repeat top center;
-            background:transparent url(/img/clouds.png);
-            z-index:3;
+        // background:transparent url(/img/clouds.png) repeat top center;
+        background:transparent url(/img/clouds.png) no-repeat;
+        z-index:3;
 
-            // -moz-animation:move-clouds-back 200s linear infinite;
-            // -ms-animation:move-clouds-back 200s linear infinite;
-            // -o-animation:move-clouds-back 200s linear infinite;
-            // -webkit-animation:move-clouds-back 200s linear infinite;
-            // animation:move-clouds-back 200s linear infinite;
+        &--left {
+                top:0;
+                left:calc(var(--distance-from-center) * -1);
+                right:0;
+                bottom:0;
+    
+                // transform: rotate(180deg);
+
         }
 
-        &::before {
-            top:0;
-            left:calc(var(--distance-from-center) * -1);
-            right:0;
-            bottom:0;
+        &--right {
+                top:0;
+                left:var(--distance-from-center);
+                right:0;
+                bottom:0;
 
-            transform: rotate(180deg);
         }
 
-        &::after {
-            top:0;
-            left:var(--distance-from-center);
-            right:0;
-            bottom:0;
-        }
+        // &::before,
+        // &::after {
+        //     content: '';
+        //     position:absolute;
+        //     width:100%;
+        //     height:100%;
+        //     display:block;
+
+        //     // background:transparent url(/img/clouds.png) repeat top center;
+        //     background:transparent url(/img/clouds.png);
+        //     z-index:3;
+
+        //     // -moz-animation:move-clouds-back 200s linear infinite;
+        //     // -ms-animation:move-clouds-back 200s linear infinite;
+        //     // -o-animation:move-clouds-back 200s linear infinite;
+        //     // -webkit-animation:move-clouds-back 200s linear infinite;
+        //     // animation:move-clouds-back 200s linear infinite;
+        // }
+
+        // &::before {
+        //     top:0;
+        //     left:calc(var(--distance-from-center) * -1);
+        //     right:0;
+        //     bottom:0;
+
+        //     transform: rotate(180deg);
+        // }
+
+        // &::after {
+        //     top:0;
+        //     left:var(--distance-from-center);
+        //     right:0;
+        //     bottom:0;
+        // }
     }
 }
 

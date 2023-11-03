@@ -21,8 +21,8 @@ export default function Header() {
   ];
 
   return (
-    <header className={styles.header}>
-        <div className={styles.header__left}>left</div>
+    <header id='header' className={styles.header}>
+        <div className={styles.header__left}></div>
         <div className={styles.header__right}>
           {
             links.map((link) => 
