@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
     height: calc($space-1x * 4);
     display: flex;
@@ -17,5 +18,9 @@
         display: flex;
         justify-content: space-between;
         gap: $space-1x;
+    }
+
+    &__link {
+        cursor: pointer;
     }
 }

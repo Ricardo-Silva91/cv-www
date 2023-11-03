@@ -10,5 +10,6 @@
     &__text-section {
         display: block;
         flex: 1;
+        min-height: calc($space-1x * 21);
     }
 }

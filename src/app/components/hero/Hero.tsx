@@ -23,18 +23,6 @@ export default function Hero() {
           <WrittenText lines={writtenTextProps.lines} ></WrittenText>
         </h1>
       </div>
-{/*       
-      <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
-          Locomotive Scroll in React
-        </h1>
-        <h2
-          data-scroll
-          data-scroll-speed="2"
-          data-scroll-position="top"
-          data-scroll-direction="horizontal"
-        >
-          Ima go sideways
-        </h2> */}
     </div>
   )
 }
