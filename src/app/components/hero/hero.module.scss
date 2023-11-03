@@ -1,6 +1,14 @@
 .hero {
     width: 100%;
-    height: calc($space-1x * 40);
-    padding: $space-1x;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: calc($space-1x * 40);
     background-color: $color-primary;
+    font-family: ApfelGrotezk-Regular;
+
+    &__text-section {
+        display: block;
+        flex: 1;
+    }
 }

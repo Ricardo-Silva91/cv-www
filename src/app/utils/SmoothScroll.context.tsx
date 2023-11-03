@@ -16,8 +16,6 @@ export const SmoothScrollProvider = ({ children, options }: {
     if (!scroll) {
       ;(async () => {
         try {
-          console.log({ doc: document.documentElement });
-          
           const LocomotiveScroll = (await import('locomotive-scroll')).default
 
           setScroll(

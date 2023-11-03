@@ -1,4 +1,5 @@
 .header {
+    position: fixed;
     width: 100%;
     height: calc($space-1x * 4);
     display: flex;
@@ -6,12 +7,15 @@
     justify-content: space-between;
     padding: $space-1x;
     background-color: $color-primary;
+    z-index: $z-index-header;
 
     &__left {
         background-color: pink;
     }
 
     &__right {
-        background-color: yellow;
+        display: flex;
+        justify-content: space-between;
+        gap: $space-1x;
     }
 }

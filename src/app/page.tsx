@@ -5,6 +5,10 @@ import Hero from './components/hero/Hero'
 import styles from './page.module.scss'
 import locomotiveScroll from "locomotive-scroll"
 import { SmoothScrollProvider } from './utils/SmoothScroll.context'
+import About from './components/about/About'
+import Contact from './components/contact/Contact'
+import Curriculum from './components/curriculum/Curriculum'
+import Interests from './components/interests/Interests'
 
 
 export default function Home() {
@@ -16,10 +20,10 @@ export default function Home() {
         <Environment></Environment>
         <Header></Header>
         <Hero data-scroll data-scroll-speed="3" data-scroll-position="top"></Hero>
-        {/* <About></About>
+        <About></About>
         <Curriculum></Curriculum>
         <Interests></Interests>
-        <Contact></Contact> */}
+        <Contact></Contact>
       </main>
       </SmoothScrollProvider>
   )

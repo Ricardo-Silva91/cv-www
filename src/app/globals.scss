@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* fonts */
+@font-face {
+  font-family: 'ApfelGrotezk-Brukt';
+  src: url('/fonts/ApfelGrotezk-Brukt.woff2');
+}
+@font-face {
+  font-family: 'ApfelGrotezk-Fett';
+  src: url('/fonts/ApfelGrotezk-Fett.woff2');
+}
+@font-face {
+  font-family: 'ApfelGrotezk-Mittel';
+  src: url('/fonts/ApfelGrotezk-Mittel.woff2');
+}
+@font-face {
+  font-family: 'ApfelGrotezk-Regular';
+  src: url('/fonts/ApfelGrotezk-Regular.woff2');
+}
+@font-face {
+  font-family: 'ApfelGrotezk-Satt';
+  src: url('/fonts/ApfelGrotezk-Satt.woff2');
+}
+/* fonts end */
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,9 +49,18 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* text */
+
+.text-5xl {
+  font-size: 3.25rem;
+  line-height: 3.5rem;
+}
+
 .highlight {
   color: $color-light;
 }
+
+/* text end */
 
 /* Locomotive scroll start */
 
