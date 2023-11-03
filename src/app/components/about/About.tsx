@@ -1,3 +1,4 @@
+import WrittenText from '../written-text/WrittenText'
 import styles from './about.module.scss'
 
 export default function About() {
@@ -8,7 +9,9 @@ export default function About() {
         data-scroll-speed="-10"
         data-scroll-position="top"
         data-scroll-direction="horizontal"
-      >About</div>
+      >
+        <WrittenText lines={[{ text: 'About' }]}></WrittenText>
+      </div>
     </div>
   )
 }
