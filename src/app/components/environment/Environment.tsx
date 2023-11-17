@@ -17,11 +17,16 @@ export default function Environment() {
   const numberOfRows = useMemo(() => Math.floor(windowHeight / cellSize) || 0, [cellSize]);
   const cellArray = useMemo(() =>
     new Array(numberOfRows * numberOfColumns).fill(0).reduce((acc) => {
-      if (acc.slice(-4).findIndex((el: any) => el.hasCloud) !== -1) {
+      if (acc.slice(-3).findIndex((el: any) => el.hasCloud) !== -1) {
         return [...acc, { hasCloud: false }];
       }
 
-      const newEl = { hasCloud: Math.random() > 0.65, double: Math.random() > 0.65 };
+      const newEl = {
+        hasCloud: Math.random() > 0.65,
+        double: Math.random() > 0.65,
+        animationDuration: `${Math.floor(Math.random() * 50) + 50}s`,
+        animationDirection: Math.random() > 0.75 ? 'reverse' : 'initial',
+     };
 
       return [...acc, newEl];
     }, []),
@@ -38,10 +43,9 @@ export default function Environment() {
       scroll.on('scroll', (func: any) => {
         const currentY = func.scroll.y;
         const calc = (currentY * 1) / 1200;
+        const calcFloor = Math.round((calc + Number.EPSILON) * 100) / 100;
 
-        if (visible && calc === 1) {
-          setVisible(false);
-        }
+        setCurrentOp(1 - calcFloor);
       });
     }
   }, [scroll])
@@ -63,12 +67,10 @@ export default function Environment() {
       setVisible(true)
     }, 0);
   }, []);
-  
-  console.log({ numberOfColumns, numberOfRows });
-  
 
   return (
     <div className={`${styles.environment} ${visible ? styles['environment--visible'] : ''}`}
+      
       data-scroll data-scroll-sticky data-scroll-target="#main"
     >
       {/* <div className={styles['environment__back-clouds']}></div> */}
@@ -77,48 +79,33 @@ export default function Environment() {
         { numberOfColumns ? 
           cellArray.map((el: any, index: number) => 
           el.hasCloud ?
-            <img key={index} src="/img/clouds.png" className={el.double ? styles['environment__backdrop__cloud--double'] : ''}/> : <div key={index}></div>
+            <img
+              key={index}
+              src="/img/clouds.png"
+              className={el.double ? styles['environment__backdrop__cloud--double'] : styles['environment__backdrop__cloud']}
+              style={{ animationDuration: el.animationDuration, animationDirection: el.animationDirection }}
+            /> : <div key={index}></div>
           ) : <></>
         }
       </div>
 
 
-      <div
-        className={`${styles['environment__cloud']} ${styles['environment__cloud--left']}`}
-        data-scroll
-        data-scroll-speed="10"
-        data-scroll-position="top"
-        data-scroll-direction="horizontal"
-      ></div>
-      <div
-        className={`${styles['environment__cloud']} ${styles['environment__cloud--right']}`}
-        data-scroll
-        data-scroll-speed="-10"
-        data-scroll-position="top"
-        data-scroll-direction="horizontal"
-      ></div>
+      <div className={styles['environment__main-cloud-wrapper']} style={{opacity: visible ? currentOp : 0, transition: `opacity ${currentOp < 1 ? '0s' : '0.5s'} ease-in-out` }}>
+        <div
+          className={`${styles['environment__cloud']} ${styles['environment__cloud--left']}`}
+          data-scroll
+          data-scroll-speed="10"
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+        ></div>
+        <div
+          className={`${styles['environment__cloud']} ${styles['environment__cloud--right']}`}
+          data-scroll
+          data-scroll-speed="-10"
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+        ></div>
+      </div>
     </div>
-  )
-  // return (
-  //   <div className={styles.environment}
-  //     style={{ opacity: currentOp }}
-  //     data-scroll data-scroll-sticky data-scroll-target="#main"
-  //   >
-  //     <div className={styles['environment__back-clouds']}></div>
-  //     <div
-  //       className={`${styles['environment__cloud']} ${styles['environment__cloud--left']}`}
-  //       data-scroll
-  //       data-scroll-speed="10"
-  //       data-scroll-position="top"
-  //       data-scroll-direction="horizontal"
-  //     ></div>
-  //     <div
-  //       className={`${styles['environment__cloud']} ${styles['environment__cloud--right']}`}
-  //       data-scroll
-  //       data-scroll-speed="-10"
-  //       data-scroll-position="top"
-  //       data-scroll-direction="horizontal"
-  //     ></div>
-  //   </div>
-  // )
+  );
 }

@@ -6,9 +6,10 @@
     z-index: $z-index-sky;
 
     --distance-from-center: 30%;
+    --bounce-animation: cubic-bezier(0.21, 0.6, 0.65, 1.31);
 
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
     &--visible {
         opacity: 1;
@@ -54,9 +55,23 @@
             --cell-size: 50px;
         }
 
+        &__cloud {
+            animation: bounce-clouds 50s var(--bounce-animation) infinite;
+        }
+
         &__cloud--double {
             max-width: 200%;
+            animation: bounce-clouds 70s var(--bounce-animation) infinite;
         }
+    }
+
+    &__main-cloud-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: bounce-clouds 70s var(--bounce-animation) infinite;
     }
 
     &__cloud {
@@ -71,14 +86,14 @@
         z-index:3;
 
         &--left {
-            top:-200px;
+            top:-10vh;
             left:calc(var(--distance-from-center) * -1);
             right:0;
             bottom:0;
         }
 
         &--right {
-            top:130px;
+            top:18vh;
             left:var(--distance-from-center);
             right:0;
             bottom:0;
@@ -104,19 +119,68 @@
     to {transform: translateX(100%);}
 }
 
+@keyframes bounce-clouds {
+     0%, 100%  {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(15%);
+    }
+}
+@-webkit-keyframes bounce-clouds {
+     0%, 100%  {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(15%);
+    }
+}
+@-moz-keyframes bounce-clouds {
+     0%, 100%  {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(15%);
+    }
+}
+@-ms-keyframes bounce-clouds {
+     0%, 100%  {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(15%);
+    }
+}
+
 @keyframes invert-clouds {
-     0%, 100%  { -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px); }
-    50% { -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10); }
+     0%, 100%  {
+        -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px);
+    }
+    50% {
+        -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10);
+    }
 }
 @-webkit-keyframes invert-clouds {
-     0%, 100%  { -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px); }
-    50% { -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10); }
+     0%, 100%  {
+        -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px);
+    }
+    50% {
+        -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10);
+    }
 }
 @-moz-keyframes invert-clouds {
-     0%, 100%  { -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px); }
-    50% { -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10); }
+     0%, 100%  {
+        -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px);
+    }
+    50% {
+        -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10);
+    }
 }
 @-ms-keyframes invert-clouds {
-     0%, 100%  { -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px); }
-    50% { -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10); }
+     0%, 100%  {
+        -webkit-filter: brightness(0px) hue-rotate(0deg) saturate(0px);
+    }
+    50% {
+        -webkit-filter: brightness(10) hue-rotate(180deg) saturate(10);
+    }
 }
