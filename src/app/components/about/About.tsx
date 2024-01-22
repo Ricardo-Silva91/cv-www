@@ -4,6 +4,7 @@ import useIntersectionObserver from '@/app/utils/IntersectionObserver';
 import { useState, useEffect } from 'react';
 import WrittenText from '../written-text/WrittenText'
 import styles from './about.module.scss'
+import PerspectiveBox from '../perspective-box/PerspectiveBox';
 
 export default function About() {
   const [isInView, ref] = useIntersectionObserver(0.5);
@@ -25,6 +26,11 @@ export default function About() {
       :
       ''
     }
+    <PerspectiveBox>
+    <img
+              src="/img/clouds.png"
+            />
+    </PerspectiveBox>
     </div>
   )
 }

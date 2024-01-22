@@ -15,9 +15,13 @@ export default function Environment() {
 
   const numberOfColumns = useMemo(() => Math.floor(windowWidth / cellSize) || 0, [cellSize]);
   const numberOfRows = useMemo(() => Math.floor(windowHeight / cellSize) || 0, [cellSize]);
-  const cellArray = useMemo(() =>
-    new Array(numberOfRows * numberOfColumns).fill(0).reduce((acc) => {
-      if (acc.slice(-3).findIndex((el: any) => el.hasCloud) !== -1) {
+  const cellArray = useMemo(() => {
+    const usedColumns: number[] = [];
+
+    return new Array(numberOfRows * numberOfColumns).fill(0).reduce((acc, _, index) => {
+      const currentColumn = index % numberOfColumns;
+
+      if (acc.slice(-3).findIndex((el: any) => el.hasCloud) !== -1 || usedColumns.includes(currentColumn)) {
         return [...acc, { hasCloud: false }];
       }
 
@@ -28,8 +32,13 @@ export default function Environment() {
         animationDirection: Math.random() > 0.75 ? 'reverse' : 'initial',
      };
 
+     if (newEl.hasCloud) {
+       usedColumns.push(currentColumn);
+     }
+
       return [...acc, newEl];
-    }, []),
+    }, []);
+  },
     [numberOfColumns, numberOfRows]);
   const gridStyle = useMemo(() =>
     ({
