@@ -2,4 +2,20 @@
     width: 100%;
     padding: calc($space-1x * 10);
     min-height: 40rem;
+
+    &__info {
+        z-index: 10;
+    }
+    
+    &__info {
+        position: relative;
+        display: flex;
+        gap: $space-1x;
+        padding: calc($space-1x * 4);
+        
+        & > div:first-child {
+            padding: 0 calc($space-1x * 30);
+            
+        }
+    }
 }

@@ -1,15 +1,16 @@
 'use client';
 
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import styles from './perspective-box.module.scss'
 
-const constrain = 60;
+const constrain = 100;
 
 export default function PerspectiveBox({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const [reset, setReset] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const moverRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = useCallback((event: any) => {
@@ -19,7 +20,25 @@ export default function PerspectiveBox({
 
     const transfro = transforms(event.clientX, event.clientY);
 
+    if(reset) {
+      setReset(false);
+    }
+
     moverRef.current.style.transform  = transfro as string;
+  }, [reset]);
+  const handleMouseLeave = useCallback(() => {
+    if (!ref.current || !moverRef.current) {
+      return;
+    }
+    
+    setReset(true);
+    setTimeout(() => {
+      if (!ref.current || !moverRef.current) {
+        return;
+      }
+
+      moverRef.current.style.transform  = "perspective(100px) rotateX(0deg) rotateY(0deg) ";
+    });
   }, []);
   const transforms = useCallback((x: number, y: number) => {
     if (!ref.current) {
@@ -36,8 +55,8 @@ export default function PerspectiveBox({
   }, []);
 
   return (
-    <div ref={ref} className={styles['perspective-box']} onMouseMove={handleMouseMove}>
-      <div ref={moverRef} className={styles['perspective-box__mover']}>
+    <div ref={ref} className={styles['perspective-box']} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      <div ref={moverRef} className={`${styles['perspective-box__mover']} ${reset ? styles['perspective-box__mover--reset'] : ''}`}>
         {children}
       </div>
     </div>
