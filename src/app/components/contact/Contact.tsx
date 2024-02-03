@@ -19,9 +19,23 @@ export default function Contact() {
     <div id='contact' className={styles.contact} ref={ref}>
       {
         hasLoaded ?
+        <>
         <h1 className='text-5xl font-extrabold'>
           <WrittenText lines={[{ text: 'Contact' }]}></WrittenText>
           </h1>
+          
+        <div className={styles.contact__info}>
+            <p>
+              email (mailto:ricardos8977@gmail.com)
+            </p>
+            <p>
+              linkedin (https://www.linkedin.com/in/ricardo-silva-365b93104/)
+            </p>
+            <p>
+              github (https://github.com/Ricardo-Silva91)
+            </p>
+        </div>
+        </>
         :
         ''
       }

@@ -7,12 +7,13 @@ import Contact from './components/contact/Contact'
 import Curriculum from './components/curriculum/Curriculum'
 import Interests from './components/interests/Interests'
 import { SmoothScrollProvider } from './utils/SmoothScroll.context'
+import CustomCursor from './components/custom-cursor/CustomCursor';
 
 
 export default function Home() {
-
   return (
     <>
+      <CustomCursor></CustomCursor>
       <SmoothScrollProvider options={{ smooth: true }}>
         <Header></Header>
         <main data-scroll-container data-scroll-section id='main'>

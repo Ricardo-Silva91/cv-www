@@ -4,10 +4,6 @@
     min-height: 40rem;
 
     &__info {
-        z-index: 10;
-    }
-    
-    &__info {
         position: relative;
         display: flex;
         gap: $space-1x;
@@ -16,6 +12,12 @@
         & > div:first-child {
             padding: 0 calc($space-1x * 30);
             
+        }
+
+        &__text {
+           display: flex;
+           flex-direction: column;
+           gap: calc($space-1x * 4);
         }
     }
 }

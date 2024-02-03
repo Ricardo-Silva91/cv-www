@@ -30,7 +30,7 @@ export default function About() {
           <PerspectiveBox>
             <img src="img/ricardo-silva.jpg" alt="profile" />
           </PerspectiveBox>
-          <div className='text-4xl'>
+          <div className={`${styles.about___info__text} text-4xl`}>
             <p>
               I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
             </p>

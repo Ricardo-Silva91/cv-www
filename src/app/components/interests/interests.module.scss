@@ -1,5 +1,19 @@
 .interests {
     width: 100%;
     padding: calc($space-1x * 10);
-    min-height: 40rem;
+    min-height: 70rem;
+
+    &__info__albums {
+        display: flex;
+        
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    }
+
+    &__embed {
+        border: 0;
+        width: calc(25% - 1rem);
+        height: 424px;
+    }
 }
