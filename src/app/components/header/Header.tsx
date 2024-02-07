@@ -26,7 +26,7 @@ export default function Header() {
         <div className={styles.header__right}>
           {
             links.map((link) => 
-              <div key={link.url} className={styles.header__link} onClick={(event) => scrollToSection(event, link.url)}>{link.label}</div>
+              <div key={link.url} className={`${styles.header__link} text-xl`} onClick={(event) => scrollToSection(event, link.url)}>{link.label}</div>
             )
           }
         </div>

@@ -31,7 +31,7 @@ export default function WrittenText({ lines }: WrittenTextProps) {
     }
     
     const fullWordToShowLength = fullWordToShow.length;
-    return Math.floor(Math.random() * (fullWordToShowLength * 0.4));
+    return Math.floor(Math.random() * (fullWordToShowLength * 0.4)) || 1;
   }, [currentLine]);
   const fullWordToShowWrong = useMemo(() => {
     if (currentLine < lines.length - 1) {

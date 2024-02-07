@@ -8,6 +8,11 @@
         display: flex;
         gap: $space-1x;
         padding: calc($space-1x * 4);
+
+        & img {
+            pointer-events: none;
+            user-select: none;
+        }
         
         & > div:first-child {
             padding: 0 calc($space-1x * 30);

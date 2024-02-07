@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: $space-1x;
+    padding: calc($space-1x * 4) calc($space-1x * 2);
     z-index: $z-index-header;
 
     &__left {
@@ -20,6 +20,12 @@
     }
 
     &__link {
-        cursor: pointer;
+        cursor: none;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
     }
 }

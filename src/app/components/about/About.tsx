@@ -30,15 +30,12 @@ export default function About() {
           <PerspectiveBox>
             <img src="img/ricardo-silva.jpg" alt="profile" />
           </PerspectiveBox>
-          <div className={`${styles.about___info__text} text-4xl`}>
+          <div className={`${styles.about___info__text} text-4xl flex flex-col justify-center`}>
             <p>
               I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
             </p>
-            <p>
-              I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
-            </p>
-            <p>
-              My prefered tools are React, 
+            <p className='mt-6'>
+              My prefered tool for web development is React but i'm familiar with Vue, Angular and Svelte.
             </p>
           </div>
         </div>

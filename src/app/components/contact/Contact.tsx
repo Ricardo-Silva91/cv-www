@@ -24,15 +24,15 @@ export default function Contact() {
           <WrittenText lines={[{ text: 'Contact' }]}></WrittenText>
           </h1>
           
-        <div className={styles.contact__info}>
+        <div className={`${styles.contact__info} text-4xl`}>
             <p>
-              email (mailto:ricardos8977@gmail.com)
+              <a href="mailto:ricardos8977@gmail.com" target='_blank'>email</a>
             </p>
             <p>
-              linkedin (https://www.linkedin.com/in/ricardo-silva-365b93104/)
+            <a href="https://www.linkedin.com/in/ricardo-silva-365b93104/" target='_blank'>linkedin</a>
             </p>
             <p>
-              github (https://github.com/Ricardo-Silva91)
+              <a href="https://github.com/Ricardo-Silva91" target='_blank'>github</a>
             </p>
         </div>
         </>
