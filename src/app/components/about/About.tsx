@@ -17,32 +17,29 @@ export default function About() {
   }, [isInView, hasLoaded]);
 
   return (
-    <div id="about" className={styles.about} ref={ref}>
-    {
-      hasLoaded ?
-      <>
-        <div className={styles.about__title}>
-          <h1 className='text-5xl font-extrabold'>
+    <div id="about" className={`${styles.about} reveal-box ${hasLoaded ? 'reveal-box--visible' : ''} `} ref={ref}>
+      <div className={styles.about__title}>
+        <h1 className='text-5xl font-extrabold'>
+          {
+            hasLoaded ? 
             <WrittenText lines={[{ text: 'About' }]}></WrittenText>
-          </h1>
+            : <></>
+          }
+        </h1>
+      </div>
+      <div className={styles.about__info}>
+        <PerspectiveBox>
+          <img src="img/ricardo-silva.jpg" alt="profile" />
+        </PerspectiveBox>
+        <div className={`${styles.about___info__text} text-4xl flex flex-col justify-center`}>
+          <p>
+            I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
+          </p>
+          <p className='mt-6'>
+            My prefered tool for web development is React but i'm familiar with Vue, Angular and Svelte.
+          </p>
         </div>
-        <div className={styles.about__info}>
-          <PerspectiveBox>
-            <img src="img/ricardo-silva.jpg" alt="profile" />
-          </PerspectiveBox>
-          <div className={`${styles.about___info__text} text-4xl flex flex-col justify-center`}>
-            <p>
-              I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
-            </p>
-            <p className='mt-6'>
-              My prefered tool for web development is React but i'm familiar with Vue, Angular and Svelte.
-            </p>
-          </div>
-        </div>
-      </>
-      :
-      ''
-    }
+      </div>
     </div>
   )
 }

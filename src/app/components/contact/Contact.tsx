@@ -16,12 +16,13 @@ export default function Contact() {
   }, [isInView, hasLoaded]);
 
   return (
-    <div id='contact' className={styles.contact} ref={ref}>
-      {
-        hasLoaded ?
-        <>
+    <div id='contact' className={`${styles.contact} reveal-box ${hasLoaded ? 'reveal-box--visible' : ''} `} ref={ref}>
         <h1 className='text-5xl font-extrabold'>
-          <WrittenText lines={[{ text: 'Contact' }]}></WrittenText>
+        {
+            hasLoaded ? 
+            <WrittenText lines={[{ text: 'Contact' }]}></WrittenText>
+            : <></>
+          }
           </h1>
           
         <div className={`${styles.contact__info} text-4xl`}>
@@ -35,10 +36,6 @@ export default function Contact() {
               <a href="https://github.com/Ricardo-Silva91" target='_blank'>github</a>
             </p>
         </div>
-        </>
-        :
-        ''
-      }
     </div>
   )
 }

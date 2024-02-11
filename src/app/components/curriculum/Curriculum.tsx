@@ -16,15 +16,17 @@ export default function Curriculum() {
   }, [isInView, hasLoaded]);
 
   return (
-    <div id="curriculum" className={styles.curriculum} ref={ref}>
-    {
-      hasLoaded ?
-      <>
+    <div id="curriculum" className={`${styles.curriculum} reveal-box ${hasLoaded ? 'reveal-box--visible' : ''} `} ref={ref}>
         <h1 className='text-5xl font-extrabold'>
-          <WrittenText lines={[{ text: 'Curriculum' }]}></WrittenText>
+          
+        {
+            hasLoaded ? 
+            <WrittenText lines={[{ text: 'Curriculum' }]}></WrittenText>
+            : <></>
+          }
           </h1>
           
-          <div className={styles.about__info}>
+          <div className={styles.curriculum__info}>
               <p>
                 Critical Techworks (https://www.criticaltechworks.com/)
                 Senior Frontend Developer
@@ -40,11 +42,6 @@ export default function Curriculum() {
                 Mestrado Integrado em Engenharia de Computadores e Telemática
               </p>
           </div>
-      </>
-
-      :
-      ''
-    }
     </div>
   )
 }

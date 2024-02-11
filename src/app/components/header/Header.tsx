@@ -13,7 +13,7 @@ export default function Header() {
   }
   
   const links = [
-    { label: 'Hero', url: '#hero' },
+    // { label: 'Hero', url: '#hero' },
     { label: 'About', url: '#about' },
     { label: 'Curriculum', url: '#curriculum' },
     { label: 'Interests', url: '#interests' },

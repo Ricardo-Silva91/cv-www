@@ -22,6 +22,7 @@
     &__link {
         cursor: none;
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        margin-left: calc($space-1x * 2);
 
         &:hover {
             transform: scale(1.2);

@@ -60,6 +60,17 @@ body {
   color: $color-light;
 }
 
+.reveal-box {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 /* text end */
 
 /* Locomotive scroll start */
