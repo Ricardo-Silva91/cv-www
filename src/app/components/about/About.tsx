@@ -33,10 +33,10 @@ export default function About() {
         </PerspectiveBox>
         <div className={`${styles.about___info__text} text-4xl flex flex-col justify-center`}>
           <p>
-            I'm obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
+            I&apos;m obsessed with automating tasks, so recently github actions and playwright scripts have been my best friends.
           </p>
           <p className='mt-6'>
-            My prefered tool for web development is React but i'm familiar with Vue, Angular and Svelte.
+            My prefered tool for web development is React but i&apos;m familiar with Vue, Angular and Svelte.
           </p>
         </div>
       </div>

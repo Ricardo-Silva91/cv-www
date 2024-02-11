@@ -50,8 +50,8 @@ export default function Curriculum() {
             </a>
             <div className="mt-5 text-xl">
               As a Senior Frontend Engineer, learned a lot about Design Systems,
-              Angular compnent libraries and CI/CD, all while 'developing for
-              developers'.
+              Angular compnent libraries and CI/CD, all while &apos;developing for
+              developers&apos;.
             </div>
           </div>
         </div>
@@ -95,24 +95,10 @@ export default function Curriculum() {
             </a>
             <div className="mt-5 text-xl">
               Mestrado Integrado em Engenharia de Computadores e Telemática
-              (Master's degree in compouter science)
+              (Master&apos;s degree in compouter science)
             </div>
           </div>
         </div>
-        {/* <p>
-          Critical Techworks (https://www.criticaltechworks.com/) Senior
-          Frontend Developer Learned a lot about Design Systems, compnent
-          libraries and CI/CD, all while 'developing for developers'
-        </p>
-        <p>
-          Moxy (https://moxy.studio/) Frontend Developer (React, React Native,
-          Vue, Go) Working for many clients in many different project, got to
-          play with React, React Native, Vue and Go.
-        </p>
-        <p>
-          Universidade de Aveiro (https://www.ua.pt/) Mestrado Integrado em
-          Engenharia de Computadores e Telemática
-        </p> */}
       </div>
     </div>
   );
