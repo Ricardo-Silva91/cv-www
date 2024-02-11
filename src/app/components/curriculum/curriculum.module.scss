@@ -1,5 +1,46 @@
 .curriculum {
-    width: 100%;
-    padding: calc($space-1x * 10);
-    min-height: 40rem;
+  width: 100%;
+  padding: calc($space-1x * 10);
+  min-height: 40rem;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc($space-1x * 8);
+
+    &__project {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: calc($space-1x * 4);
+      padding: calc($space-1x * 4);
+
+      &:nth-of-type(2) > div > img {
+        animation-delay: 1000ms;
+      }
+      &:nth-of-type(3) > div > img {
+        animation-delay: 2000ms;
+      }
+
+      &__pic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        & > img {
+          width: 75%;
+          object-fit: cover;
+        }
+      }
+
+      &__info {
+        flex: 1;
+
+        & > a {
+          font-family: ApfelGrotezk-Satt;
+        }
+      }
+    }
+  }
 }

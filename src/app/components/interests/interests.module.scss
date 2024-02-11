@@ -1,44 +1,44 @@
 .interests {
+  width: 100%;
+  padding: calc($space-1x * 10);
+  min-height: 49rem;
+
+  &__info__albums {
+    display: flex;
     width: 100%;
-    padding: calc($space-1x * 10);
-    min-height: 70rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    margin-top: calc($space-1x * 4);
 
-    &__info__albums {
-        display: flex;
-        
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: space-evenly;
-        margin-top: calc($space-1x * 4);
+    &__album {
+      cursor: none;
+      display: block;
+      height: 424px;
+      width: calc(25% - 1rem);
+      overflow: hidden;
 
-        &__album {
-            cursor: none;
-            display: block;
-            height: 424px;
-            width: calc(25% - 1rem);
-            overflow: hidden;
+      & > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        user-select: none;
 
-            & > img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                user-select: none;
-                
-                transition: transform 0.5s ease-in-out;
-
-                &:hover {
-                    transform: scale(1.2) rotate(2deg);
-                }
-            }
-        }
-    }
-
-    &__info__button {
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
 
         &:hover {
-            transform: scale(1.2);
-            opacity: 0.5;
+          transform: scale(1.2) rotate(2deg);
         }
+      }
     }
+  }
+
+  &__info__button {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+  }
 }
