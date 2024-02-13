@@ -1,30 +1,51 @@
 .about {
-    width: 100%;
-    padding: calc($space-1x * 10);
-    min-height: 40rem;
-    
-    font-family: 'ApfelGrotezk-Regular';
-
+    // min-height: 40rem;
+  
+    font-family: "ApfelGrotezk-Regular";
+  
     &__info {
-        position: relative;
+      position: relative;
+      display: flex;
+      gap: $space-1x;
+      padding: calc($space-1x * 4);
+  
+      @media (max-width: $breakpoint-md) {
+        flex-direction: column;
+      }
+  
+      & img {
+        pointer-events: none;
+        user-select: none;
+  
+        @media (max-width: $breakpoint-md) {
+          width: 75vw;
+        }
+      }
+  
+      & > div:first-child {
+        padding: 0 calc($space-1x * 30);
+  
+        @media (max-width: $breakpoint-md) {
+          padding: 0 calc($space-1x * 2);
+        }
+      }
+  
+      &__text {
         display: flex;
-        gap: $space-1x;
-        padding: calc($space-1x * 4);
-
-        & img {
-            pointer-events: none;
-            user-select: none;
+        flex-direction: column;
+        gap: calc($space-1x * 2);
+  
+        @media (max-width: $breakpoint-md) {
+          margin-top: calc($space-1x * 4);
+  
+          & > p {
+            text-align: right;
+          }
+          & > p:first-child {
+            text-align: left;
+          }
         }
-        
-        & > div:first-child {
-            padding: 0 calc($space-1x * 30);
-            
-        }
-
-        &__text {
-           display: flex;
-           flex-direction: column;
-           gap: calc($space-1x * 4);
-        }
+      }
     }
-}
+  }
+  

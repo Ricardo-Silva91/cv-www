@@ -1,7 +1,5 @@
 .interests {
-  width: 100%;
-  padding: calc($space-1x * 10);
-  min-height: 49rem;
+  // min-height: 49rem;
 
   &__info__albums {
     display: flex;
@@ -17,6 +15,12 @@
       height: 424px;
       width: calc(25% - 1rem);
       overflow: hidden;
+
+      @media (max-width: $breakpoint-md) {
+        width: calc(50vw - 2rem);
+        height: calc(50vw - 2rem);
+        border-radius: 100%;
+      }
 
       & > img {
         height: 100%;

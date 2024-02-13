@@ -6,7 +6,7 @@ import WrittenText from "../written-text/WrittenText";
 import styles from "./curriculum.module.scss";
 
 export default function Curriculum() {
-  const [isInView, ref] = useIntersectionObserver(0.5);
+  const [isInView, ref] = useIntersectionObserver(0);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Curriculum() {
   return (
     <div
       id="curriculum"
-      className={`${styles.curriculum} reveal-box ${
+      className={`${styles.curriculum} section reveal-box ${
         hasLoaded ? "reveal-box--visible" : ""
       } `}
       ref={ref}
@@ -50,8 +50,8 @@ export default function Curriculum() {
             </a>
             <div className="mt-5 text-xl">
               As a Senior Frontend Engineer, learned a lot about Design Systems,
-              Angular compnent libraries and CI/CD, all while &apos;developing for
-              developers&apos;.
+              Angular component libraries and CI/CD, all while &apos;developing
+              for developers&apos;.
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function Curriculum() {
             </a>
             <div className="mt-5 text-xl">
               Mestrado Integrado em Engenharia de Computadores e Telemática
-              (Master&apos;s degree in compouter science)
+              (Master&apos;s degree in computer science)
             </div>
           </div>
         </div>

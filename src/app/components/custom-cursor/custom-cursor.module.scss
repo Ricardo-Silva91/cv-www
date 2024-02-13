@@ -4,18 +4,23 @@
     height: 30px;
     background-color: $color-white;
     z-index: $z-index-sky;
-    border-radius: 100% ;
-
+    border-radius: 100%;
+  
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
-    
+  
     pointer-events: none;
     cursor: none;
-
+  
     transition: transform 0.3s ease-in-out;
-    
-    &--mouse-down {
-        transition: transform 1s ease-in-out;
-        transform: translate(-50%, -50%) scale(10000%);
+  
+    @media (hover: none) {
+      display: none;
     }
-}
+  
+    &--mouse-down {
+      transition: transform 1s ease-in-out;
+      transform: translate(-50%, -50%) scale(10000%);
+    }
+  }
+  

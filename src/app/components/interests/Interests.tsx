@@ -121,7 +121,7 @@ export default function Interests() {
   return (
     <div
       id="interests"
-      className={`${styles.interests} reveal-box ${
+      className={`${styles.interests} section reveal-box ${
         hasLoaded ? "reveal-box--visible" : ""
       } `}
       ref={ref}
@@ -136,7 +136,7 @@ export default function Interests() {
       <div className={styles.interests__info}>
         <p className="mt-4 text-xl">
           I like cooking, horror movies and writing scripts to automate my life,
-          but my main insterest is music.
+          but my main interest is music.
         </p>
         <div className="flex flex-col items-center">
           <div

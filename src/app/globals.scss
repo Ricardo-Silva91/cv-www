@@ -52,6 +52,17 @@ body {
   color: $color-light;
 }
 
+/* text end */
+
+.section {
+  width: 100%;
+  padding: calc($space-1x * 10);
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc($space-1x * 2);
+  }
+}
+
 .reveal-box {
   opacity: 0;
   visibility: hidden;

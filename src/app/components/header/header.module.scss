@@ -9,24 +9,33 @@
     padding: calc($space-1x * 4) calc($space-1x * 2);
     z-index: $z-index-header;
 
+    @media (max-width: $breakpoint-md) {
+      background-color: $color-primary;
+      transition: transform 450ms ease-in-out;
+
+      &--hidden {
+        transform: translateY(-100%);
+      }
+    }
+
     &__left {
-        background-color: pink;
+      background-color: pink;
     }
 
     &__right {
-        display: flex;
-        justify-content: space-between;
-        gap: $space-1x;
+      display: flex;
+      justify-content: space-between;
+      gap: $space-1x;
     }
 
     &__link {
-        cursor: none;
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        margin-left: calc($space-1x * 2);
+      cursor: none;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      margin-left: calc($space-1x * 2);
 
-        &:hover {
-            transform: scale(1.2);
-            opacity: 0.5;
-        }
+      &:hover {
+        transform: scale(1.2);
+        opacity: 0.5;
+      }
     }
-}
+  }
