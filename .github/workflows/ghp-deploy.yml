@@ -1,7 +1,7 @@
 name: Deploy App - GitHub Pages
 on:
   push:
-    branches: [pages/main, main]
+    # branches: [pages/main, main]
   workflow_dispatch:
 
 permissions:

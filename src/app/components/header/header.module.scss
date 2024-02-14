@@ -9,7 +9,7 @@
     padding: calc($space-1x * 4) calc($space-1x * 2);
     z-index: $z-index-header;
 
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       background-color: $color-primary;
       transition: transform 450ms ease-in-out;
 

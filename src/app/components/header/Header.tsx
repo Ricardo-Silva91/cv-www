@@ -58,7 +58,7 @@ export default function Header() {
         {links.map((link) => (
           <div
             key={link.url}
-            className={`${styles.header__link} text-md lg:text-xl`}
+            className={`${styles.header__link} text-md xl:text-xl`}
             onClick={(event) => scrollToSection(event, link.url)}
           >
             {link.label}

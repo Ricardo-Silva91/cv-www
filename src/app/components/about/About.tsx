@@ -38,7 +38,7 @@ export default function About() {
           <img src="img/ricardo-silva.jpg" alt="profile" />
         </PerspectiveBox>
         <div
-          className={`${styles.about__info__text} text-2xl lg:text-4xl flex flex-col justify-center`}
+          className={`${styles.about__info__text} text-2xl xl:text-4xl flex flex-col justify-center`}
         >
           <p>
             I&apos;m obsessed with automating tasks, so recently github actions

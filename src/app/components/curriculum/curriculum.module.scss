@@ -13,7 +13,7 @@
       gap: calc($space-1x * 4);
       padding: calc($space-1x * 4);
 
-      @media (max-width: $breakpoint-md) {
+      @media (max-width: $breakpoint-lg) {
         flex-direction: column;
         margin-bottom: calc($space-1x * 3);
 
@@ -39,7 +39,7 @@
           width: 75%;
           object-fit: cover;
 
-          @media (max-width: $breakpoint-md) {
+          @media (max-width: $breakpoint-lg) {
             width: 100%;
           }
         }
@@ -48,7 +48,7 @@
       &__info {
         flex: 1;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-lg) {
           order: 1;
         }
 

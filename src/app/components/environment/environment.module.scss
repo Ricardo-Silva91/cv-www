@@ -47,7 +47,7 @@
         display: grid;
         animation: invert-clouds 5s linear infinite;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-lg) {
             --cell-size: 75px;
         }
 

@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <div id="hero" className={`${styles.hero} section`}>
       <div className={styles["hero__text-section"]}>
-        <h1 className="text-3xl lg:text-6xl font-extrabold">
+        <h1 className="text-3xl xl:text-6xl font-extrabold">
           <WrittenText lines={writtenTextProps.lines}></WrittenText>
         </h1>
       </div>
