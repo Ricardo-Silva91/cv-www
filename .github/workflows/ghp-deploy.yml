@@ -1,6 +1,6 @@
 name: Deploy App - GitHub Pages
 on:
-  push:
+  # push:
     # branches: [pages/main, main]
   workflow_dispatch:
 
