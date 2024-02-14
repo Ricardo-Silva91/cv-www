@@ -50,6 +50,11 @@ export default function Contact() {
             github
           </a>
         </p>
+        <p>
+          <a href="cv.pdf" target="_blank" download>
+            download my cv
+          </a>
+        </p>
       </div>
     </div>
   );
